@@ -1,0 +1,11 @@
+flask
+flask-cors
+torch
+torchvision
+ultralytics
+timm
+xgboost
+scikit-learn
+opencv-python
+numpy
+pandas
