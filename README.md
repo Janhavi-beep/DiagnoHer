@@ -168,6 +168,11 @@ Integration with hospital systems
 Expansion to additional diseases
 Real-time clinical decision support
 
+
+## Project Demo Video
+
+[Watch Demo Video](https://drive.google.com/file/d/1ymcjhmdUOgwSFg8Q3kY05Ll8yfQSETKC/view?usp=sharing)
+
 ## ⚠️ Disclaimer
 
 This project is intended for educational and research purposes only and should not be used as a substitute for professional medical diagnosis.
