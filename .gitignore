@@ -1,0 +1,10 @@
+node_modules/
+venv/
+pcos_env/
+__pycache__/
+*.pyc
+.env
+*.pt
+*.pth
+*.h5
+*.zip

@@ -1,0 +1,603 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   MenstrualPage.css  —  Neural-Core Menstrual Irregularity Module
+   Dark medical theme matching PCOS + Ovarian pages
+   Accent: #f687b3 (rose-pink for menstrual context)
+══════════════════════════════════════════════════════════════════════════════ */
+
+
+
+/* ── Page shell ─────────────────────────────────────────────────────────────── */
+.menstrual-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 2rem 2rem 4rem;
+  font-family: 'DM Mono', monospace;
+  color: var(--text);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.menstrual-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menstrual-header-icon {
+  font-size: 2rem;
+  color: var(--rose);
+  filter: drop-shadow(0 0 10px rgba(246, 135, 179, 0.4));
+}
+
+.menstrual-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.menstrual-title span {
+  color: var(--rose);
+}
+
+.menstrual-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Two-column layout ──────────────────────────────────────────────────────── */
+.menstrual-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .menstrual-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Panels ─────────────────────────────────────────────────────────────────── */
+.menstrual-panel {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-icon { font-size: 1.4rem; }
+
+.panel-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.panel-sub {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+
+/* ── Form sections ──────────────────────────────────────────────────────────── */
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.req { color: var(--rose); }
+
+.input-unit-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.input-unit-wrap:focus-within {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 2px rgba(246, 135, 179, 0.1);
+}
+
+.input-unit-wrap input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+}
+
+.input-unit-wrap input::placeholder { color: var(--text-4); }
+
+.unit {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  padding: 0 0.6rem;
+  white-space: nowrap;
+  border-left: 1px solid var(--border);
+}
+
+/* ── Toggle ─────────────────────────────────────────────────────────────────── */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s;
+  padding: 0;
+}
+
+.toggle-btn.active {
+  background: var(--rose-dim);
+  border-color: var(--rose);
+}
+
+.toggle-knob {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.25s;
+}
+
+.toggle-btn.active .toggle-knob {
+  left: 20px;
+  background: white;
+}
+
+.toggle-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* ── Sliders ─────────────────────────────────────────────────────────────────── */
+.slider-val {
+  float: right;
+  font-size: 0.7rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.slider-track-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-min, .slider-max {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  min-width: 12px;
+}
+
+.menstrual-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--rose) 0%,
+    var(--rose) var(--pct),
+    var(--bg-3) var(--pct),
+    var(--bg-3) 100%
+  );
+}
+
+.menstrual-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--rose);
+  border: 2px solid var(--bg-2);
+  box-shadow: 0 0 6px rgba(246, 135, 179, 0.5);
+  cursor: pointer;
+}
+
+/* ── Symptom chips ──────────────────────────────────────────────────────────── */
+.symptom-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.symptom-chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.symptom-chip:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+.symptom-chip.selected {
+  background: rgba(246, 135, 179, 0.12);
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+/* ── Error ──────────────────────────────────────────────────────────────────── */
+.menstrual-error {
+  background: rgba(252, 129, 129, 0.08);
+  border: 1px solid rgba(252, 129, 129, 0.3);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.75rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+/* ── Action buttons ─────────────────────────────────────────────────────────── */
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn-analyse {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--rose-dim), rgba(214, 63, 140, 0.6));
+  border: 1px solid var(--rose);
+  border-radius: 10px;
+  color: white;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+
+.btn-analyse:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--rose), var(--rose-dim));
+  box-shadow: 0 4px 20px rgba(246, 135, 179, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-analyse:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.btn-reset {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover { border-color: var(--red); color: var(--red); }
+
+/* ── Placeholder ────────────────────────────────────────────────────────────── */
+.result-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.result-placeholder p { font-size: 0.8rem; margin: 0; }
+.placeholder-sub { font-size: 0.65rem !important; opacity: 0.5; }
+
+.placeholder-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--border);
+  animation: rotateSlow 12s linear infinite;
+}
+
+.loading-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--rose);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes rotateSlow { to { transform: rotate(360deg); } }
+
+/* ── Result content ─────────────────────────────────────────────────────────── */
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Diagnosis banner ───────────────────────────────────────────────────────── */
+.diagnosis-banner {
+  background: var(--bg-3);
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-left-width: 3px;
+}
+
+.diagnosis-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.diagnosis-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.diagnosis-severity {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.sev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.diagnosis-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.diagnosis-desc {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ── Rules ──────────────────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  background: var(--bg-3);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.rule-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose);
+  flex-shrink: 0;
+}
+
+/* ── Metrics row ────────────────────────────────────────────────────────────── */
+.metrics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.metric-box {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+}
+
+.metric-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.metric-sub {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+}
+
+/* ── PCOS correlation badge ─────────────────────────────────────────────────── */
+.pcos-correlation {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(99, 179, 237, 0.08);
+  border: 1px solid rgba(99, 179, 237, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.72rem;
+  color: var(--cyan);
+  line-height: 1.4;
+}
+
+.corr-icon { font-size: 1rem; flex-shrink: 0; }
+
+/* ── Recommendations ────────────────────────────────────────────────────────── */
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.rec-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--rose);
+  min-width: 24px;
+  padding-top: 0.05rem;
+}
+
+/* ── Disclaimer ─────────────────────────────────────────────────────────────── */
+.menstrual-disclaimer {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  opacity: 0.5;
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
