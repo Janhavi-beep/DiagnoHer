@@ -515,8 +515,7 @@ Always consult qualified healthcare professionals for medical advice.
 # 👩‍💻 Author
 
 ## Janhavi Deshmukh
-## Shreeya Bhalwatkar
-## Sharvari Chambavane
+
 
 Final Year Engineering Project
 
